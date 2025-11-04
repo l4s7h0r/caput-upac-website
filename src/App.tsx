@@ -8,6 +8,7 @@ import { FormacionYMediacion } from './components/FormacionYMediacion'; // Nombr
 import { PublicacionesYCirculaciones } from './components/PublicacionesYCirculaciones'; // Nombre cambiado
 import { Videos } from './components/Videos'; // Nuevo import
 import { Error404 } from './components/Error404'; // Nuevo import
+import { SwipeLayer } from './components/SwipeLayer';
 import React, { useRef, useEffect, useState } from 'react';
 
 export function App() {
@@ -17,6 +18,11 @@ export function App() {
   const canScroll = useRef(true);
   const SCROLL_COOLDOWN = 600;
   const [show404, setShow404] = useState(false);
+  const [isSwiping, setIsSwiping] = useState(false);
+
+  const triggerSwipe = () => {
+    setIsSwiping(true);
+  };
 
   const scrollToSection = (index: number) => {
     if (sectionRefs.current[index]) {
@@ -119,7 +125,8 @@ export function App() {
   }, [show404]);
 
   const handleShow404 = () => {
-    setShow404(true);
+    triggerSwipe();
+    setTimeout(() => setShow404(true), 1000);
   };
 
   const handleHide404 = () => {
@@ -132,6 +139,7 @@ export function App() {
 
   return (
     <>
+      {isSwiping && <SwipeLayer onFinish={() => setIsSwiping(false)} />}
       <Header scrollRef={scrollContainerRef as React.RefObject<HTMLDivElement>} />
       <div
         ref={scrollContainerRef}
@@ -149,7 +157,7 @@ export function App() {
         <div id="somos" ref={el => {
           if (el) sectionRefs.current[1] = el;
         }} className="w-screen h-screen flex-shrink-0 flex flex-col items-center justify-center bg-green-100 snap-center">
-          <Somos />
+          <Somos onShow404={handleShow404} />
         </div>
 
         {/* Sección Proyectos y Acciones */}
@@ -163,28 +171,28 @@ export function App() {
         <div id="residencias" ref={el => {
           if (el) sectionRefs.current[3] = el;
         }} className="w-screen h-screen flex-shrink-0 snap-center">
-          <Residencias onShow404={handleShow404} />
+          <Residencias onShow404={handleShow404} onSwipe={triggerSwipe} />
         </div>
 
         {/* Sección Formación y Mediación */}
         <div id="formacionYMediacion" ref={el => {
           if (el) sectionRefs.current[4] = el;
         }} className="w-screen h-screen flex-shrink-0 bg-[#f2dc40] snap-center">
-          <FormacionYMediacion onShow404={handleShow404} />
+          <FormacionYMediacion onShow404={handleShow404} onSwipe={triggerSwipe} />
         </div>
 
         {/* Sección Publicaciones y Circulaciones */}
         <div id="publicacionesYCirculaciones" ref={el => {
           if (el) sectionRefs.current[5] = el;
         }} className="w-screen h-screen flex-shrink-0 snap-center">
-          <PublicacionesYCirculaciones onShow404={handleShow404} />
+          <PublicacionesYCirculaciones onShow404={handleShow404} onSwipe={triggerSwipe} />
         </div>
 
         {/* Sección Videos */}
         <div id="videos" ref={el => {
           if (el) sectionRefs.current[6] = el;
         }} className="w-screen h-screen flex-shrink-0 snap-center">
-          <Videos onShow404={handleShow404} />
+          <Videos onShow404={handleShow404} onSwipe={triggerSwipe} />
         </div>
       </div>
     </>

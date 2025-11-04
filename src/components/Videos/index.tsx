@@ -11,9 +11,10 @@ interface VideoData {
 
 interface VideosProps {
   onShow404?: () => void;
+  onSwipe?: () => void;
 }
 
-export const Videos = ({ onShow404 }: VideosProps) => {
+export const Videos = ({ onShow404, onSwipe }: VideosProps) => {
   const [videos, setVideos] = useState<VideoData[]>([]);
 
   // Datos de ejemplo de videos
@@ -66,14 +67,15 @@ export const Videos = ({ onShow404 }: VideosProps) => {
   }, []);
 
   const handleVideoClick = (video: VideoData) => {
+    onSwipe && onSwipe();
     if (video.youtubeUrl) {
-      window.open(video.youtubeUrl, '_blank');
+      setTimeout(() => window.open(video.youtubeUrl!, '_blank'), 2000);
     } else {
       // Redirigir a 404 si no hay URL
       if (onShow404) {
-        onShow404();
+        setTimeout(() => onShow404(), 2000);
       } else {
-        window.location.href = '/404';
+        setTimeout(() => { window.location.href = '/404'; }, 2000);
       }
     }
   };

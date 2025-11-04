@@ -15,36 +15,26 @@ export const ProyectosYAcciones = ({ onShow404 }: ProyectosYAccionesProps) => {
 
   return (
     <section id="proyectosYAcciones" className={styles.proyectosYAccionesSection}>
-      <img
-        src="/explosion_verde.svg"
-        alt="Explosión superior izquierda"
-        className={styles.topLeftExplosion}
-      />
-      <img
-        src="/explosion_transparente.svg"
-        alt="Explosión inferior derecha"
-        className={styles.bottomRightExplosion}
-      />
-      <div className={styles.projectTitlesContainer}>
-        {projectTitles.map((project, index) => (
-          <div key={index}>
-            <h2
-              className={styles.projectTitle}
-              onClick={() => handleProjectClick(index)}
-            >
-              {project.title}
-            </h2>
-           
-          </div>
-        ))}
-      </div>
-      <div className={styles.mainTitleContainer}>
-        <h1 className={styles.sectionTitlePrimary}>
-          <span className={styles.proyectosText}>proyectos</span>
-          <img src="/&.svg" alt="ampersand" className={styles.ampersandSvg} />
-        </h1>
-        <h1 className={styles.sectionTitleSecondary}>acciones</h1>
-      </div>
+      {/* Decorativos y fondos */}
+      <img src="/explosion_verde.svg" alt="Explosión izquierda" className={styles.leftExplosion} />
+      <img src="/explosion_transparente.svg" alt="Explosión inferior derecha" className={styles.bottomRightExplosion} />
+      <img src="/PyA-esquinasuperiorderecha.svg" alt="Decoración esquina superior derecha" className={styles.topRightCorner} />
+      <img src="/franja estrella.svg" alt="Franja estrellas" className={styles.bottomLeftStrip} />
+      <img src="/rectangulo PyA rojo.svg" alt="Rectángulo rojo" className={styles.redRect} />
+
+      {/* Título principal clickeable */}
+      <h1
+        className={styles.mainTitle}
+        onClick={() => onShow404 && onShow404()}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { onShow404 && onShow404(); } }}
+        aria-label="Ir a error 404 desde Proyectos y acciones"
+      >
+        proyectos<br />y acciones
+      </h1>
+
+      {/* Subtítulos eliminados temporalmente */}
     </section>
   );
 };

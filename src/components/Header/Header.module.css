@@ -7,10 +7,13 @@
   align-items: start;
 
   padding: clamp(.75rem, 2vw, 1.25rem) clamp(1rem, 3vw, 2rem);
-  background: #eaf3fb; /* similar a tu referencia */
+  background: #c2e1f2; /* similar a tu referencia */
   border-bottom: 1px solid #d7e6f1;
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 1000;
   transition: transform 0.3s ease, padding 0.3s ease;
 }

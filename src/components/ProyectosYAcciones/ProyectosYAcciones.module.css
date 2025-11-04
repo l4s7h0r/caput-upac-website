@@ -8,48 +8,67 @@
   overflow: hidden;
 }
 
-.topLeftExplosion {
+.leftExplosion {
   position: absolute;
-  top: -300px;
-  left: -350px;
-  width: 665px; /* Ajusta el tamaño según sea necesario */
+  left: -17%;
+  top: 10%;
+  width: min(52vmin, 560px);
   height: auto;
-  fill: #eaf5fc; /* Color de la explosión superior izquierda (blanco) */ /*e9f5fc*/
-  animation: rotate 12s linear infinite; /* Rotación constante en 12 segundos */
+  pointer-events: none;
 }
 
 .bottomRightExplosion {
   position: absolute;
-  bottom: -400px;
-  right: -475px;
-  width: 800px; /* Ajusta el tamaño según sea necesario */
+  bottom: -30vh;
+  right: -24vw;
+  width: min(110vmin, 1100px);
   height: auto;
-  transform: rotate(180deg); /* Rotar para que la punta apunte a la derecha */
-  fill: #e8bd0a; /* Color de la explosión inferior derecha (amarillo) */       /*f77f00- e8bd0a*/
-  animation: rotate 8s linear infinite; /* Rotación constante en 8 segundos */
+  transform: rotate(180deg);
+  opacity: .7;
+  pointer-events: none;
+}
+
+/* Esquina superior derecha */
+.topRightCorner {
+  position: absolute;
+  top: 8%;
+  right: 0;
+  width: min(18vw, 220px);
+  height: auto;
+  pointer-events: none;
+}
+
+/* Franja inferior izquierda */
+.bottomLeftStrip {
+  position: absolute;
+  left: 0;
+  top: 75%;
+  bottom: 10vh;
+  width: min(80vw, 720px);
+  height: auto;
+  pointer-events: none;
+}
+
+/* Rectángulo rojo encima del título */
+.redRect {
+  position: absolute;
+  left: 40%; /* ligeramente a la derecha del centro */
+  bottom: 25vh;
+  transform: translateX(-65%);
+  width: min(25rem, 150px);
+  height: min(16vh, 250px);
 }
 
 .projectTitlesContainer {
-  position: absolute;
-  right: 2rem;
-  top: 50%;
-  transform: translateY(-50%);
-  display: grid; /* Cambiar a grid */
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-  gap: 0.5rem 2rem; /* Espaciado entre filas y columnas */
-  text-align: right; /* Alinear texto a la derecha */
-  width: 50%; /* Ajustar ancho para que quepa en la derecha */
+  display: none;
 }
 
 .projectTitle {
-  font-size: 1.2rem;
-  color: white; /* Color blanco para los títulos */
-  cursor: pointer;
-  transition: color 0.3s ease;
+  display: none;
 }
 
 .projectTitle:hover {
-  color: #fff; /* Mantener blanco al pasar el mouse */ 
+  color: #fff; 
 }
 
 .projectSummary {
@@ -80,50 +99,50 @@
   background-color: #ea3606; /*#e06a00*/
 }
 
-.mainTitleContainer {
+
+/* Título principal centrado un poco hacia la derecha */
+.mainTitle {
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  display: flex;
-  flex-direction: column;
-  width: fit-content; /* Ajustar el ancho al contenido */
-  height: fit-content; /* Ajustar la altura al contenido */
-  max-width: 80%; /* Limitar el ancho máximo para responsividad */
-  z-index: 1; /* Asegurar que esté por encima de otros elementos */
-}
-
-.sectionTitlePrimary {
-  font-size: 5rem; /* Ajusta el tamaño de fuente */
-  color: yellow; /* Color amarillo */
-  line-height: 0.8; /* Ajusta la altura de línea */
-  display: flex;
-  align-items: center; /* Centra verticalmente el contenido */
-  gap: 1.5rem; /* Espacio entre "proyectos" y "&" */
-}
-
-.proyectosText {
+  left: 54%;
+  top: 74%;
+  bottom: 12vh;
+  transform: translateX(-50%);
   font-family: 'MPLUSRounded1c', sans-serif;
-  font-weight: 800; /* ExtraBold */
+  font-weight: 800;
+  font-size: clamp(2.8rem, 8vw, 6.2rem);
+  line-height: .9;
+  color: #e8bd0a;
+  text-transform: lowercase;
+  cursor: pointer;
+  z-index: 5;
 }
 
-.ampersandSvg {
-  height: 5rem; /* Ajusta el tamaño del SVG para que coincida con el texto */
-  width: auto;
-  color: #a0a0a0; /* Color gris para el SVG como en la imagen */
-  /*a0a0a0*/
+/* ——— Responsividad ——— */
+@media (max-width: 1024px) {
+  .leftExplosion { left: -22%; top: 6%; width: min(60vmin, 520px); }
+  .bottomRightExplosion { right: -30vw; bottom: -32vh; width: min(130vmin, 1200px); }
+  .bottomLeftStrip { bottom: 12vh; width: min(90vw, 780px); }
+  .redRect { left: 42%; bottom: 24vh; transform: translateX(-60%); width: min(22rem, 130px); height: min(22vh, 220px); }
+  .mainTitle { left: 54%; top: 74%; font-size: clamp(2.4rem, 9vw, 5.6rem); }
 }
 
-.sectionTitleSecondary {
-  font-family: 'MPLUSRounded1c', sans-serif;
-  font-weight: 300; /* Light */
-  font-size: 3rem; /* Ajusta el tamaño de fuente para "acciones" */
-  color: #a0a0a0; /* Color gris más claro  (#a0a0a0)*/
+@media (max-width: 768px) {
+  .leftExplosion { left: -30%; top: 8%; width: min(70vmin, 480px); }
+  .bottomRightExplosion { right: -38vw; bottom: -34vh; width: min(150vmin, 1300px); }
+  .bottomLeftStrip { bottom: 14vh; width: min(100vw, 820px); }
+  .redRect { left: 44%; bottom: 22vh; transform: translateX(-58%); width: min(18rem, 110px); height: min(20vh, 200px); }
+  .mainTitle { left: 52%; top: 76%; font-size: clamp(2rem, 10vw, 5rem); }
 }
 
-/* Eliminar estilos anteriores si ya no son necesarios */
-.proyectosYAccionesSection h1, .proyectosYAccionesSection p {
-  display: none; 
+@media (max-width: 560px) {
+  .leftExplosion { left: -40%; top: 10%; width: min(80vmin, 420px); }
+  .bottomRightExplosion { right: -46vw; bottom: -36vh; width: min(180vmin, 1400px); }
+  .bottomLeftStrip { bottom: 16vh; width: 120vw; }
+  .redRect { left: 48%; bottom: 20vh; transform: translateX(-50%); width: min(14rem, 90px); height: min(18vh, 160px); }
+  .mainTitle { left: 50%; top: 78%; font-size: clamp(1.8rem, 12vw, 4.2rem); }
 }
+
+/* Eliminar regla que ocultaba títulos */
 
 @keyframes rotate {
   from {
