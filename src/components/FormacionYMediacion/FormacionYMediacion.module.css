@@ -26,21 +26,51 @@
   z-index: 2;
 }
 
-.explosionIzquierda {
+/* Contenedor para las 3 explosiones horizontales */
+.explosionesContainer {
   position: absolute;
-  left: 0%;
-  top: 40%;
+  left: -20%;
+  top: 30%;
   bottom: 12%;
-  width: min(22vw, 320px);
-  height: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  width: 100%;
   z-index: 1;
 }
 
+.explosionIzquierda {
+  position: relative;
+  left: 9%;
+  top: 4%;
+  width: min(22vw, 320px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.explosionCentro {
+  position: relative;
+  left: 2%;
+  top: 4%;
+  width: min(22vw, 320px);
+  height: auto;
+  flex-shrink: 0;
+}
+
 .explosionDerecha {
+  position: relative;
+  left: -8%;
+  top: 4%;
+  width: min(22vw, 320px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.explosionDerechaRoja {
   position: absolute;
-  right: -12%;
+  right: 8%;
   top: 75%;
-  width: min(30vw, 500px);
+  width: min(40vw, 600px);
   height: auto;
   z-index: 1;
 }
@@ -52,7 +82,7 @@
   bottom: 10%;
   transform: translateY(0);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: .75rem;
   background: transparent;
   border: 0;
@@ -60,23 +90,35 @@
   cursor: pointer;
   z-index: 3;
 }
+
+.titleTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .tituloFormacion {
-  font-family: 'MPLUSRounded1c', sans-serif;
+  font-family: 'Rounded Mplus 1c', sans-serif;
   font-weight: 800;
   font-size: clamp(2.2rem, 6.5vw, 5rem);
   color: #3a7be8; /* azul principal */
   text-transform: lowercase;
+  line-height: 1;
 }
+
 .ampersand {
-  height: clamp(2rem, 6vw, 4.6rem);
+  height: clamp(10rem, 10vw, 5rem);
   width: auto;
+  align-self: center;
 }
+
 .tituloMediacion {
-  font-family: 'MPLUSRounded1c', sans-serif;
-  font-weight: 400;
-  font-size: clamp(1.8rem, 5.2vw, 4rem);
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.8rem, 5.2vw, 5rem);
   color: #3a7be8;
   text-transform: lowercase;
+  line-height: 1;
 }
 
 @media (max-width: 1024px) {
@@ -88,15 +130,21 @@
 @media (max-width: 768px) {
   .rectDerecha { width: min(36vw, 420px); right: -4%; top: 14%; }
   .elementoMedio { top: 24%; width: min(20vw, 220px); }
-  .explosionDerecha { right: -12%; top: 10%; width: min(42vw, 520px); }
-  .explosionIzquierda { left: 4%; bottom: 12%; width: min(30vw, 380px); }
+  .explosionDerechaRoja { right: -12%; top: 10%; width: min(42vw, 520px); }
+  .explosionesContainer { gap: 1.5vw; }
+  .explosionIzquierda,
+  .explosionCentro,
+  .explosionDerecha { width: min(25vw, 280px); }
   .titleButton { left: 16%; bottom: 12%; }
 }
 
 @media (max-width: 560px) {
   .rectDerecha { width: min(46vw, 480px); right: -8%; top: 16%; }
   .elementoMedio { top: 26%; width: min(26vw, 240px); }
-  .explosionDerecha { right: -16%; top: 12%; width: min(56vw, 600px); }
-  .explosionIzquierda { left: 2%; bottom: 12%; width: min(42vw, 420px); }
+  .explosionDerechaRoja { right: -16%; top: 12%; width: min(56vw, 600px); }
+  .explosionesContainer { gap: 1vw; }
+  .explosionIzquierda,
+  .explosionCentro,
+  .explosionDerecha { width: min(28vw, 300px); }
   .titleButton { left: 10%; bottom: 12%; }
 }

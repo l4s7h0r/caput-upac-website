@@ -1,11 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 400">
-  <!-- Outer rounded rectangle filled with currentColor; play triangle is cut out via a mask -->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153.27 108.46">
   <defs>
-    <mask id="cut">
-      <rect x="0" y="0" width="576" height="400" fill="white"/>
-      <!-- Play triangle (masked out) -->
-      <polygon points="240,120 240,280 380,200" fill="black"/>
-    </mask>
+    <style>
+      .cls-1 {
+        fill: #0a87ed;
+      }
+    </style>
   </defs>
-  <rect x="16" y="16" width="544" height="368" rx="80" ry="80" fill="currentColor" mask="url(#cut)"/>
+  <path class="cls-1" d="M121.44,0H31.83C14.25,0,0,14.25,0,31.83v44.79C0,94.21,14.25,108.46,31.83,108.46h89.61c17.58,0,31.83-14.25,31.83-31.83V31.83C153.27,14.25,139.02,0,121.44,0ZM99.91,56.41l-41.91,19.99c-1.12.53-2.41-.28-2.41-1.52v-41.23c0-1.25,1.32-2.07,2.44-1.5l41.91,21.24c1.25.63,1.22,2.42-.04,3.02Z"/>
 </svg>

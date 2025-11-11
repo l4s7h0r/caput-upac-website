@@ -6,7 +6,6 @@
   overflow: hidden;
 }
 
-/* Elementos posicionados por % para permitir ajuste manual */
 .explosionIzquierda {
   position: absolute;
   left: -9%;
@@ -21,10 +20,27 @@
   position: absolute;
   left: 0%;
   top: 50%;
-  width: min(20vw, 180px);
+  width: min(20vw, 160px);
   height: auto;
   z-index: 2;
   pointer-events: none;
+  animation: estirarRectangulo 3s ease-in-out infinite;
+  transform-origin: left center;
+}
+
+@keyframes estirarRectangulo {
+  0% {
+    width: min(20vw, 160px);
+    left: 0%;
+  }
+  50% {
+    width: min(38vw, 500px);
+    left: 0%;
+  }
+  100% {
+    width: min(20vw, 160px);
+    left: 0%;
+  }
 }
 
 .elementoCuadrado {
@@ -39,7 +55,7 @@
 
 .elementoSuperiorDerecha {
   position: absolute;
-  right: 20%;
+  right: 10%;
   top: 10%;
   width: min(6vw, 190px);
   height: auto;
@@ -65,9 +81,28 @@
   height: auto;
   z-index: 2;
   pointer-events: none;
+  animation: estrellaNinja 3s ease-in-out infinite;
+  transform-origin: center center;
 }
 
-/* Título compuesto clickeable */
+@keyframes estrellaNinja {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateX(-15vw) rotate(90deg);
+  }
+  50% {
+    transform: translateX(-30vw) rotate(180deg);
+  }
+  75% {
+    transform: translateX(-15vw) rotate(270deg);
+  }
+  100% {
+    transform: translateX(0) rotate(360deg);
+  }
+}
+
 .titleButton {
   position: absolute;
   left: 38%;
@@ -85,7 +120,7 @@
 }
 
 .tituloPublicaciones {
-  font-family: 'MPLUSRounded1c', sans-serif;
+  font-family: 'Rounded Mplus 1c', sans-serif;
   font-weight: 800;
   font-size: clamp(2.4rem, 7vw, 5.8rem);
   color: #e55b3d;
@@ -94,7 +129,7 @@
 }
 
 .tituloYCirculacion {
-  font-family: 'MPLUSRounded1c', sans-serif;
+  font-family: 'Rounded Mplus 1c', sans-serif;
   font-weight: 400;
   font-size: clamp(1.8rem, 5.2vw, 4.2rem);
   color: #e55b3d;
@@ -106,31 +141,154 @@
 /* Responsividad */
 @media (max-width: 1024px) {
   .explosionIzquierda { left: -12%; top: -6%; width: min(85vw, 980px); }
-  .rectanguloAmarillo { left: 1%; top: 36%; width: min(22vw, 320px); }
+  .rectanguloAmarillo { 
+    left: 1%; 
+    top: 36%; 
+    width: min(22vw, 320px);
+    animation: estirarRectangulo1024 3s ease-in-out infinite;
+  }
+  @keyframes estirarRectangulo1024 {
+    0% {
+      width: min(22vw, 320px);
+      left: 1%;
+    }
+    50% {
+      width: min(36vw, 480px);
+      left: 1%;
+    }
+    100% {
+      width: min(22vw, 320px);
+      left: 1%;
+    }
+  }
   .elementoCuadrado { left: 44%; top: 50%; width: min(10vw, 140px); }
   .elementoSuperiorDerecha { right: 6%; top: 6%; width: min(8vw, 110px); }
   .explosionAzulFondo { right: 10%; bottom: 14%; width: min(34vw, 480px); }
-  .explosionRojaEncima { right: 14%; bottom: 18%; width: min(20vw, 280px); }
+  .explosionRojaEncima { 
+    right: 14%; 
+    bottom: 18%; 
+    width: min(20vw, 280px);
+    animation: estrellaNinja1024 3s ease-in-out infinite;
+  }
+  @keyframes estrellaNinja1024 {
+    0% {
+      transform: translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateX(-18vw) rotate(90deg);
+    }
+    50% {
+      transform: translateX(-36vw) rotate(180deg);
+    }
+    75% {
+      transform: translateX(-18vw) rotate(270deg);
+    }
+    100% {
+      transform: translateX(0) rotate(360deg);
+    }
+  }
   .titleButton { left: 36%; top: 50%; }
 }
 
 @media (max-width: 768px) {
   .explosionIzquierda { left: -16%; top: -8%; width: min(95vw, 1100px); }
-  .rectanguloAmarillo { left: 0%; top: 38%; width: min(28vw, 360px); }
+  .rectanguloAmarillo { 
+    left: 0%; 
+    top: 38%; 
+    width: min(28vw, 360px);
+    animation: estirarRectangulo768 3s ease-in-out infinite;
+  }
+  @keyframes estirarRectangulo768 {
+    0% {
+      width: min(28vw, 360px);
+      left: 0%;
+    }
+    50% {
+      width: min(32vw, 420px);
+      left: 0%;
+    }
+    100% {
+      width: min(28vw, 360px);
+      left: 0%;
+    }
+  }
   .elementoCuadrado { left: 42%; top: 52%; width: min(12vw, 160px); }
   .elementoSuperiorDerecha { right: 4%; top: 6%; width: min(10vw, 130px); }
   .explosionAzulFondo { right: 8%; bottom: 16%; width: min(42vw, 540px); }
-  .explosionRojaEncima { right: 12%; bottom: 20%; width: min(24vw, 320px); }
+  .explosionRojaEncima { 
+    right: 12%; 
+    bottom: 20%; 
+    width: min(24vw, 320px);
+    animation: estrellaNinja768 3s ease-in-out infinite;
+  }
+  @keyframes estrellaNinja768 {
+    0% {
+      transform: translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateX(-20vw) rotate(90deg);
+    }
+    50% {
+      transform: translateX(-40vw) rotate(180deg);
+    }
+    75% {
+      transform: translateX(-20vw) rotate(270deg);
+    }
+    100% {
+      transform: translateX(0) rotate(360deg);
+    }
+  }
   .titleButton { left: 32%; top: 52%; }
 }
 
 @media (max-width: 560px) {
   .explosionIzquierda { left: -20%; top: -10%; width: min(110vw, 1200px); }
-  .rectanguloAmarillo { left: -2%; top: 40%; width: min(36vw, 400px); }
+  .rectanguloAmarillo { 
+    left: -2%; 
+    top: 40%; 
+    width: min(36vw, 400px);
+    animation: estirarRectangulo560 3s ease-in-out infinite;
+  }
+  @keyframes estirarRectangulo560 {
+    0% {
+      width: min(36vw, 400px);
+      left: -2%;
+    }
+    50% {
+      width: min(30vw, 380px);
+      left: -2%;
+    }
+    100% {
+      width: min(36vw, 400px);
+      left: -2%;
+    }
+  }
   .elementoCuadrado { left: 40%; top: 54%; width: min(16vw, 180px); }
   .elementoSuperiorDerecha { right: 2%; top: 6%; width: min(14vw, 150px); }
   .explosionAzulFondo { right: 4%; bottom: 18%; width: min(52vw, 600px); }
-  .explosionRojaEncima { right: 8%; bottom: 22%; width: min(30vw, 360px); }
+  .explosionRojaEncima { 
+    right: 8%; 
+    bottom: 22%; 
+    width: min(30vw, 360px);
+    animation: estrellaNinja560 3s ease-in-out infinite;
+  }
+  @keyframes estrellaNinja560 {
+    0% {
+      transform: translateX(0) rotate(0deg);
+    }
+    25% {
+      transform: translateX(-22vw) rotate(90deg);
+    }
+    50% {
+      transform: translateX(-44vw) rotate(180deg);
+    }
+    75% {
+      transform: translateX(-22vw) rotate(270deg);
+    }
+    100% {
+      transform: translateX(0) rotate(360deg);
+    }
+  }
   .titleButton { left: 28%; top: 54%; }
 }
 

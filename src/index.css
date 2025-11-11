@@ -207,3 +207,10 @@ body{
   box-shadow: var(--shadow);
 }
 .demo-main h2{ margin: 0; }
+
+/* Ocultar scrollbar en Chrome, Safari y Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ocultar scrollbar en Firefox ya está en el inline style */

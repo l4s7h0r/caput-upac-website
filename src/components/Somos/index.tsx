@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './Somos.module.css';
 
 interface SomosProps {
-  onShow404?: () => void;
+  onShowSomosInterna?: () => void;
 }
 
-export const Somos = ({ onShow404 }: SomosProps) => {
+export const Somos = ({ onShowSomosInterna }: SomosProps) => {
   return (
     <section id="somos" className={styles.somosSection}>
       {/* Decorativos de fondo según maqueta */}
@@ -31,11 +31,11 @@ export const Somos = ({ onShow404 }: SomosProps) => {
         {/* Título "somos" que ocupa las primeras dos columnas */}
         <h1
           className={styles.somosTitle}
-          onClick={() => onShow404 && onShow404()}
+          onClick={() => onShowSomosInterna && onShowSomosInterna()}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { onShow404 && onShow404(); } }}
-          aria-label="Ir a error 404"
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { onShowSomosInterna && onShowSomosInterna(); } }}
+          aria-label="Ir a página interna de Somos"
         >
           somos
         </h1>

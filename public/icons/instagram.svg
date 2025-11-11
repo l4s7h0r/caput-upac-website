@@ -1,8 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Color is controlled via CSS with currentColor -->
-  <rect x="48" y="48" width="416" height="416" rx="112" ry="112"
-        fill="none" stroke="currentColor" stroke-width="64" stroke-linejoin="round"/>
-  <circle cx="256" cy="256" r="112"
-          fill="none" stroke="currentColor" stroke-width="64"/>
-  <circle cx="360" cy="152" r="32" fill="currentColor"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153.27 153.27">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #0a87ed;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M107.61,0h-61.95C20.48,0,0,20.48,0,45.66v61.95c0,25.18,20.48,45.66,45.66,45.66h61.95c25.18,0,45.66-20.48,45.66-45.66v-61.95c0-25.18-20.48-45.66-45.66-45.66ZM137.85,107.61c0,16.7-13.54,30.24-30.24,30.24h-61.95c-16.7,0-30.24-13.54-30.24-30.24v-61.95c0-16.7,13.54-30.24,30.24-30.24h61.95c16.7,0,30.24,13.54,30.24,30.24v61.95h0Z"/>
+  <path class="cls-1" d="M76.63,36.99c-21.86,0-39.64,17.78-39.64,39.64s17.78,39.64,39.64,39.64,39.64-17.78,39.64-39.64-17.78-39.64-39.64-39.64ZM76.63,100.86c-13.38,0-24.22-10.84-24.22-24.22s10.84-24.22,24.22-24.22,24.22,10.84,24.22,24.22-10.84,24.22-24.22,24.22Z"/>
+  <circle class="cls-1" cx="116.35" cy="37.29" r="9.5"/>
 </svg>

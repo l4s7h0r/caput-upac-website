@@ -123,7 +123,7 @@
 .cornerExplosion {
   position: absolute;
   top: 8%;
-  right: -8vw;
+  right: -10vw;
   width: min(90vmin, 680px);
   height: auto;
   transform: translate(20%, -5%);
@@ -171,7 +171,7 @@
   }
 
   .mainExplosion {
-    width: min(120vmin, 800px);
+    width: min(120vmin, 900px);
     transform: translate(-50%, -20%); /* Ajustado para el corte a la izquierda */
     opacity: 1; /* Eliminado la opacidad */
   }

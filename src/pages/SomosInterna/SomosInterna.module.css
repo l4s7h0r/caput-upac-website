@@ -1,0 +1,387 @@
+/* Página interna de Somos - Estilos con porcentajes para fácil ajuste */
+
+.somosInternaSection {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #c9e0f1; /* Fondo celeste suave */
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Elementos decorativos a los costados */
+.decoracionIzquierda {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.decoracionDerecha {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5%;
+  height: 100%;
+  object-fit: contain;
+  object-position: right center;
+  transform: scaleX(-1); /* Voltear horizontalmente */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Contenedor principal */
+.contenedorPrincipal {
+  position: relative;
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3% 2%;
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+/* Header con título y logo */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4%;
+  gap: 2%;
+}
+
+.tituloSeccion {
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+}
+
+.logo {
+  width: clamp(120px, 15vw, 200px);
+  height: auto;
+  object-fit: contain;
+}
+
+.tagline {
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+  color: #666;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Contenido principal: dos cuadros */
+.contenidoPrincipal {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 3%;
+  width: 100%;
+  margin-top: 3%;
+  box-sizing: border-box;
+}
+
+/* Cuadro izquierdo: Imagen del fundador */
+.cuadroIzquierdo {
+  background-color: #e0e0e0; /* Gris claro */
+  border: 3px solid #2e68ac; /* Borde azul */
+  border-radius: 8px;
+  padding: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 60vh;
+}
+
+.imagenContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagenFundador {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid #2e68ac;
+  border-radius: 4px;
+  aspect-ratio: 1;
+}
+
+/* Cuadro derecho: Información del fundador */
+.cuadroDerecho {
+  background-color: #f2dc40; /* Amarillo dorado */
+  border: 3px solid #2e68ac; /* Borde azul */
+  border-radius: 8px;
+  padding: 4%;
+  box-sizing: border-box;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoFundador {
+  display: flex;
+  flex-direction: column;
+  gap: 3%;
+  height: 100%;
+}
+
+.nombreCompleto {
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.carrera {
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.descripcion {
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  color: #000;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  flex: 1;
+}
+
+/* Redes sociales */
+.redesSociales {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.redSocialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(40px, 5vw, 60px);
+  height: clamp(40px, 5vw, 60px);
+  background-color: #c9e0f1;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.redSocialLink:hover {
+  transform: scale(1.1);
+}
+
+.redSocialIcon {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  color: #fff;
+}
+
+.redSocialIconEmail {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+/* Proyectos personales */
+.proyectosContainer {
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+}
+
+.tituloProyectos {
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  color: #000;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.proyectosGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3%;
+  width: 100%;
+}
+
+.proyectoCard {
+  width: 90%;
+  aspect-ratio: 1;
+  border: 2px solid #2e68ac;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.proyectoImagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botón para volver */
+.botonVolver {
+  position: fixed;
+  top: 3%;
+  left: 3%;
+  padding: 1% 2%;
+  background-color: #2e68ac;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 500;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.botonVolver:hover {
+  background-color: #1e4a7c;
+}
+
+/* Responsive: Tablets */
+@media (max-width: 1024px) {
+  .contenidoPrincipal {
+    grid-template-columns: 1fr;
+    gap: 4%;
+  }
+
+  .cuadroIzquierdo {
+    min-height: 40vh;
+  }
+
+  .cuadroDerecho {
+    min-height: auto;
+  }
+
+  .decoracionIzquierda,
+  .decoracionDerecha {
+    width: 4%;
+  }
+}
+
+/* Responsive: Móviles */
+@media (max-width: 768px) {
+  .contenedorPrincipal {
+    width: 95%;
+    padding: 5% 3%;
+  }
+
+  .header {
+    margin-bottom: 6%;
+  }
+
+  .contenidoPrincipal {
+    grid-template-columns: 1fr;
+    gap: 5%;
+    margin-top: 5%;
+  }
+
+  .cuadroIzquierdo {
+    min-height: 35vh;
+    padding: 5%;
+  }
+
+  .cuadroDerecho {
+    padding: 5%;
+    min-height: auto;
+  }
+
+  .infoFundador {
+    gap: 4%;
+  }
+
+  .redesSociales {
+    gap: 5%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+
+  .proyectosGrid {
+    grid-template-columns: 1fr;
+    gap: 4%;
+  }
+
+  .decoracionIzquierda,
+  .decoracionDerecha {
+    width: 3%;
+    opacity: 0.6;
+  }
+
+  .botonVolver {
+    top: 2%;
+    left: 2%;
+    padding: 2% 3%;
+  }
+}
+
+/* Responsive: Móviles pequeños */
+@media (max-width: 480px) {
+  .contenedorPrincipal {
+    width: 98%;
+    padding: 6% 4%;
+  }
+
+  .cuadroIzquierdo {
+    min-height: 30vh;
+  }
+
+  .decoracionIzquierda,
+  .decoracionDerecha {
+    display: none; /* Ocultar decoraciones en pantallas muy pequeñas */
+  }
+}
+

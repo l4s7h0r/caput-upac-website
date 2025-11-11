@@ -1,23 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153.27 122.62">
   <defs>
-    <mask id="cut-f">
-      <rect x="0" y="0" width="512" height="512" fill="white"/>
-      <!-- Stylized 'f' cutout -->
-      <path d="
-        M 300 112
-        L 240 112
-        L 240 176
-        L 210 176
-        L 210 236
-        L 240 236
-        L 240 400
-        L 300 400
-        L 300 236
-        L 340 236
-        L 340 176
-        L 300 176 Z" fill="black"/>
-    </mask>
+    <style>
+      .cls-1 {
+        fill: #0a87ed;
+      }
+    </style>
   </defs>
-  <!-- Rounded square filled with currentColor, 'f' is knocked out via mask -->
-  <rect x="32" y="32" width="448" height="448" rx="96" ry="96" fill="currentColor" mask="url(#cut-f)"/>
+  <path class="cls-1" d="M122.62,0H30.65C10.73,0,0,15.79,0,30.65v61.31c0,19.92,15.79,30.65,30.65,30.65h91.96c14.87,0,30.65-10.73,30.65-30.65V30.65c0-14.87-10.73-30.65-30.65-30.65ZM137.94,90.16c0,15.33-15.33,15.33-15.33,15.33V36.52l-45.98,30.65-45.98-30.65v68.97s-15.33,0-15.33-15.33V28.85s0-15.33,15.33-15.33l45.98,34.49L122.62,13.53c15.33,0,15.33,15.33,15.33,15.33v61.31Z"/>
 </svg>

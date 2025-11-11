@@ -10,17 +10,17 @@
 
 .leftExplosion {
   position: absolute;
-  left: -17%;
-  top: 10%;
-  width: min(52vmin, 560px);
+  left: -18.2%;
+  top: 6%;
+  width: min(60vmin, 1400px);
   height: auto;
   pointer-events: none;
 }
 
 .bottomRightExplosion {
   position: absolute;
-  bottom: -30vh;
-  right: -24vw;
+  bottom: -35%;
+  right: -30%;
   width: min(110vmin, 1100px);
   height: auto;
   transform: rotate(180deg);
@@ -36,6 +36,36 @@
   width: min(18vw, 220px);
   height: auto;
   pointer-events: none;
+  animation: caidaEscalera 4s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes caidaEscalera {
+  0% {
+    top: -10%;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  10% {
+    opacity: 1;
+  }
+  30% {
+    top: 8%;
+    transform: scale(1);
+  }
+  70% {
+    top: 8%;
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 90%;
+    opacity: 0;
+    transform: scale(0.8);
+  }
 }
 
 /* Franja inferior izquierda */
@@ -107,9 +137,9 @@
   top: 74%;
   bottom: 12vh;
   transform: translateX(-50%);
-  font-family: 'MPLUSRounded1c', sans-serif;
-  font-weight: 800;
-  font-size: clamp(2.8rem, 8vw, 6.2rem);
+  font-family: 'Rounded Mplus 1c', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 8vw, 7.2rem);
   line-height: .9;
   color: #e8bd0a;
   text-transform: lowercase;
@@ -124,6 +154,36 @@
   .bottomLeftStrip { bottom: 12vh; width: min(90vw, 780px); }
   .redRect { left: 42%; bottom: 24vh; transform: translateX(-60%); width: min(22rem, 130px); height: min(22vh, 220px); }
   .mainTitle { left: 54%; top: 74%; font-size: clamp(2.4rem, 9vw, 5.6rem); }
+  .topRightCorner {
+    animation: caidaEscalera1024 4s ease-in-out infinite;
+  }
+  @keyframes caidaEscalera1024 {
+    0% {
+      top: -10%;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    10% {
+      opacity: 1;
+    }
+    30% {
+      top: 8%;
+      transform: scale(1);
+    }
+    70% {
+      top: 8%;
+      opacity: 1;
+      transform: scale(1);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -132,6 +192,36 @@
   .bottomLeftStrip { bottom: 14vh; width: min(100vw, 820px); }
   .redRect { left: 44%; bottom: 22vh; transform: translateX(-58%); width: min(18rem, 110px); height: min(20vh, 200px); }
   .mainTitle { left: 52%; top: 76%; font-size: clamp(2rem, 10vw, 5rem); }
+  .topRightCorner {
+    animation: caidaEscalera768 4s ease-in-out infinite;
+  }
+  @keyframes caidaEscalera768 {
+    0% {
+      top: -10%;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    10% {
+      opacity: 1;
+    }
+    30% {
+      top: 8%;
+      transform: scale(1);
+    }
+    70% {
+      top: 8%;
+      opacity: 1;
+      transform: scale(1);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
 }
 
 @media (max-width: 560px) {
@@ -140,6 +230,36 @@
   .bottomLeftStrip { bottom: 16vh; width: 120vw; }
   .redRect { left: 48%; bottom: 20vh; transform: translateX(-50%); width: min(14rem, 90px); height: min(18vh, 160px); }
   .mainTitle { left: 50%; top: 78%; font-size: clamp(1.8rem, 12vw, 4.2rem); }
+  .topRightCorner {
+    animation: caidaEscalera560 4s ease-in-out infinite;
+  }
+  @keyframes caidaEscalera560 {
+    0% {
+      top: -10%;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    10% {
+      opacity: 1;
+    }
+    30% {
+      top: 8%;
+      transform: scale(1);
+    }
+    70% {
+      top: 8%;
+      opacity: 1;
+      transform: scale(1);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+      transform: scale(0.8);
+    }
+  }
 }
 
 /* Eliminar regla que ocultaba títulos */

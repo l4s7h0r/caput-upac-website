@@ -12,7 +12,7 @@
 .residenciasTitle {
   /* Posicionamiento manual (no guiado por grilla) */
   position: absolute;
-  left: 65%; /* ajustable */
+  left: 66%; /* ajustable */
   top: 22%;  /* ajustable */
   transform: translateX(-50%);
   display: flex;
@@ -83,22 +83,46 @@
   width: min(14vw, 150px);
   height: auto;
   z-index: 2;
+  animation: caidaEscalera 4s ease-in-out infinite;
+}
+
+@keyframes caidaEscalera {
+  0% {
+    top: -10%;
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.8);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    top: 39.3%;
+    transform: translate(-50%, 0) scale(1);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 90%;
+    opacity: 0;
+    transform: translate(-50%, 0) scale(0.8);
+  }
 }
 
 .tricolorSuperiorIzquierda {
   position: absolute;
   left: 0%;
-  top: 15%;
-  width: min(36vw, 650px);
+  top: 14.3%;
+  width: min(90vw, 850px);
   height: auto;
   z-index: 2;
 }
 
 .explosionIzquierda {
   position: absolute;
-  left: -20%;
-  top: 28%;
-  width: min(90vmin, 900px);
+  left: -25%;
+  top: 35%;
+  width: min(110vmin, 1200px);
   height: auto;
   opacity: .7;
   z-index: 1;
@@ -106,9 +130,9 @@
 
 .explosionDerecha {
   position: absolute;
-  right: -5%;
-  top: 24%;
-  width: min(70vmin, 300px);
+  right: -5.8%;
+  top: 47%;
+  width: min(70vmin, 320px);
   height: auto;
   z-index: 1;
 }
@@ -130,7 +154,34 @@
 /* Responsividad */
 @media (max-width: 1024px) {
   .tricolorDetrasTitulo { left: 62%; top: 20%; width: min(36vw, 520px); }
-  .componenteMedio { left: 58%; top: 38%; width: min(18vw, 240px); }
+  .componenteMedio { 
+    left: 58%; 
+    top: 38%; 
+    width: min(18vw, 240px);
+    animation: caidaEscalera1024 4s ease-in-out infinite;
+  }
+  @keyframes caidaEscalera1024 {
+    0% {
+      top: -10%;
+      opacity: 0;
+      transform: translate(-50%, 0) scale(0.8);
+    }
+    10% {
+      opacity: 1;
+    }
+    50% {
+      top: 38%;
+      transform: translate(-50%, 0) scale(1);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+      transform: translate(-50%, 0) scale(0.8);
+    }
+  }
   .tricolorSuperiorIzquierda { left: 4%; top: 6%; width: min(42vw, 600px); }
   .explosionIzquierda { left: -26%; top: 32%; width: min(100vmin, 980px); }
   .explosionDerecha { right: -14%; top: 28%; width: min(80vmin, 820px); }
@@ -139,7 +190,34 @@
 @media (max-width: 768px) {
   .residenciasTitle { grid-area: 2 / 2 / 3 / 7; }
   .tricolorDetrasTitulo { left: 58%; top: 22%; width: min(48vw, 560px); }
-  .componenteMedio { left: 56%; top: 40%; width: min(24vw, 260px); }
+  .componenteMedio { 
+    left: 56%; 
+    top: 40%; 
+    width: min(24vw, 260px);
+    animation: caidaEscalera768 4s ease-in-out infinite;
+  }
+  @keyframes caidaEscalera768 {
+    0% {
+      top: -10%;
+      opacity: 0;
+      transform: translate(-50%, 0) scale(0.8);
+    }
+    10% {
+      opacity: 1;
+    }
+    50% {
+      top: 40%;
+      transform: translate(-50%, 0) scale(1);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+      transform: translate(-50%, 0) scale(0.8);
+    }
+  }
   .tricolorSuperiorIzquierda { left: 0%; top: 6%; width: min(60vw, 640px); }
   .explosionIzquierda { left: -34%; top: 36%; width: min(120vmin, 1100px); }
   .explosionDerecha { right: -18%; top: 30%; width: min(100vmin, 980px); }
@@ -148,7 +226,34 @@
 @media (max-width: 560px) {
   .residenciasTitle { grid-area: 2 / 1 / 3 / 7; font-size: clamp(2rem, 10vw, 4rem); }
   .tricolorDetrasTitulo { left: 54%; top: 24%; width: min(60vw, 620px); }
-  .componenteMedio { left: 52%; top: 44%; width: min(30vw, 280px); }
+  .componenteMedio { 
+    left: 52%; 
+    top: 44%; 
+    width: min(30vw, 280px);
+    animation: caidaEscalera560 4s ease-in-out infinite;
+  }
+  @keyframes caidaEscalera560 {
+    0% {
+      top: -10%;
+      opacity: 0;
+      transform: translate(-50%, 0) scale(0.8);
+    }
+    10% {
+      opacity: 1;
+    }
+    50% {
+      top: 44%;
+      transform: translate(-50%, 0) scale(1);
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      top: 90%;
+      opacity: 0;
+      transform: translate(-50%, 0) scale(0.8);
+    }
+  }
   .tricolorSuperiorIzquierda { left: -6%; top: 6%; width: min(72vw, 720px); }
   .explosionIzquierda { left: -42%; top: 40%; width: min(140vmin, 1200px); }
   .explosionDerecha { right: -24%; top: 32%; width: min(120vmin, 1100px); }
